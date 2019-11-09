@@ -1,0 +1,64 @@
+/***
+ * 常用的一些样式
+ ***/
+@import '_color';
+
+// 内容区样式
+.app-content {
+  padding: 20px 30px;
+}
+
+// 四边阴影
+.ley-shadow {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
+}
+
+// 下阴影
+.ley-bottom-shadow {
+  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.14);
+}
+
+// a 标签
+.ley-a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+// 默认 a 标签样式
+.ley-default-a {
+  text-decoration: none;
+  color: $color-666;
+  &:hover {
+    color: $orange;
+  }
+}
+
+// 按钮
+.ley-btn {
+  padding: 0 15px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+// markdown 相关样式
+.manage-content {
+  pre {
+    padding: 1em 1.4em;
+    line-height: 1.8em;
+    color: $code-color;
+    background: $pre-bclolr;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+  }
+  p {
+    line-height: 1.8em;
+    color: $p-color;
+  }
+}
+

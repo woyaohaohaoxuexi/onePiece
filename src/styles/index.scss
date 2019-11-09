@@ -1,0 +1,9 @@
+@import './common/normalize.scss';
+@import 'flex.scss';
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+  color: #555;
+  background-color: #fff;
+}

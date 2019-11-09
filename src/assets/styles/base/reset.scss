@@ -1,0 +1,34 @@
+html, body {
+  height: 100%;
+  font-size: 14px;
+}
+div, p {
+  box-sizing: border-box;
+}
+// 取消默认边框
+p, div, input, textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 输入框默认获取焦点
+input, textarea, button {
+  padding: 0 10px;
+  border: 1px solid $color-border;
+  line-height: 32px;
+  &:focus{
+    outline: none;
+  }
+}
+input, textarea {
+  min-width: 240px;
+}
+
+input {
+  height: 32px;
+}
+
+textarea {
+  height: 100px;
+}

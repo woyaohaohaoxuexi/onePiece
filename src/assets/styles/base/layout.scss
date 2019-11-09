@@ -1,0 +1,45 @@
+// 布局样式
+.ley-flex {
+  display: flex;
+}
+
+// 垂直方向排列
+.ley-column {
+  @extend .ley-flex;
+  flex-direction: column;
+}
+
+// 主轴方向居中显示
+.ley-center {
+  @extend .ley-flex;
+  justify-content: center;
+}
+
+// 主轴方向两端对齐
+.ley-between {
+  @extend .ley-flex;
+  justify-content: space-between;
+}
+
+// 交叉轴居中对齐
+.ley-align-center {
+  @extend .ley-flex;
+  align-items: center;
+}
+
+// 一行放不下就换行
+.ley-wrap {
+  @extend .ley-flex;
+  flex-wrap: wrap;
+}
+
+// 子项目固定大小（不放大也不缩小）
+.ley-item-fixed {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+// 子项目大小跟着父元素改变
+.ley-item-vary {
+  flex-grow: 1;
+}
