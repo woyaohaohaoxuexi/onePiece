@@ -44,7 +44,7 @@
 
 <style scoped lang="scss">
 .container {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding-top: 50px;
   color: #000;

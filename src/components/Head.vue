@@ -1,6 +1,6 @@
 <template>
 	<div class='blog-head'>
-		<div class="container ley-flex ley-flex-space-between ley-flex-align-center">
+		<div class="container ley-flex ley-between ley-align-center">
 			<!--  左边博客主名称  -->
 			<div class="user-name">
 				{{userName}}
@@ -14,8 +14,6 @@
 				</div>
 			</div>
 		</div>
-		
-			
 	</div>
 </template>
 
@@ -26,13 +24,17 @@
 				userName: 'LEY',
 				menuList: [
 					{
-						name: '前端技术'
+						name: '前端技术',
+						routeName: 'Home'
 					},{
-						name: '生活'
+						name: '生活',
+						routeName: 'Life'
 					},{
-						name: "读书"
+						name: "读书",
+						routeName: 'Reading'
 					},{
-						name: '个人介绍'
+						name: '个人介绍',
+						routeName: 'Self'
 					}
 				]
 			}
@@ -60,7 +62,8 @@
 	border-bottom: 1px solid #eee;
 }
 .container {
-	width: 1170px;
+	width: 70%;
+	height: 60px;
 	margin: 0 auto;
 	.user-name {
 		font-weight: 600;
@@ -70,7 +73,8 @@
 		font-weight: 300;
 	}
 	.item-menu {
-		padding: 15px;
+		// padding: 15px;
+		margin: 0 15px;
 		cursor: pointer;
 		&:hover {
 			color: #000;

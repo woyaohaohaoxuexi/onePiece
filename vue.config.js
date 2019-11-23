@@ -5,6 +5,7 @@ function resolve (src) {
 module.exports = {
   chainWebpack: config => {
     config.resolve.alias
+      .set('@', resolve('src/'))
       .set('@layout', resolve('src/layout'))
       .set('@pages', resolve('src/pages'))
       .set('@components', resolve('src/components'))
@@ -25,7 +26,7 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        data: `@import "~@/assets/styles/main.scss";`
+        prependData: `@import "~@/assets/styles/main.scss";`
       }
     }
   },

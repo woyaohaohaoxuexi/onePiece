@@ -11,24 +11,24 @@ const routes = [
   },
   {
     path: '/home',
-    name: 'Home',
     redirect: '/home/index',
     component: LayOut,
     children: [
       {
         path: 'index',
+        name: 'Home',
         component: () => import('@pages/home/index')
       }
     ]
   },
   {
     path: '/article',
-    name: 'Article',
     redirect: '/article/index',
     component: LayOut,
     children: [
       {
-        path: 'index',
+        path: 'index/:id',
+        name: 'Article',
         component: () => import('@pages/article/index')
       }
     ]

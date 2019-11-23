@@ -1,38 +1,44 @@
 <template>
   <div class='home-page'>
-    <div class="item-article">
+    <div 
+      v-for="item in articleList"
+      class="item-article">
       <h3>
-        <router-link :to="{name: 'Article', params: {manageId: 11}}" class="ley-a">标题</router-link>
+        <router-link :to="{ name: 'Article', params: { id: item.id } }" class="ley-a">
+          {{item.title}}
+        </router-link>
       </h3>
       <!--  辅助信息  -->
       <div class="date-content">
-        <span>2019-11-09  21:37</span>
+        <span>{{ item.updateDate || new Date() }}</span>
       </div>
       <!--  简介信息  -->
-      <p class="infomation">这是简介信息</p>
-    </div>
-    <div class="item-article">
-      <h3>
-        <router-link :to="{name: 'Article', params: {manageId: 11}}" class="ley-a">标题</router-link>
-      </h3>
-      <!--  辅助信息  -->
-      <div class="date-content">
-        <span>2019-11-09  21:37</span>
-      </div>
-      <!--  简介信息  -->
-      <p class="infomation">这是简介信息</p>
+      <p class="infomation">{{ item.introduction }} </p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: '',
+  name: 'Home',
   data() {
     return {
 
     }
   },
+  computed: {
+    ...mapState('article', ['articleList']) 
+  },
+  created() {
+    this.init()
+  },
+  methods: {
+    ...mapActions('article', ['getArticleList']),
+    init() {
+      this.getArticleList()
+    }
+  }
 }
 </script>
 
@@ -40,8 +46,8 @@ export default {
 .home-page {
   .item-article {
     padding-left: 10px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
     border-bottom: 2px solid $color-border;
     .date-content {
       font-size: 12px;
