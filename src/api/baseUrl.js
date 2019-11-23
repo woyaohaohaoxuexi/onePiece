@@ -1,1 +1,1 @@
-export const BASE_URL = '/ley'
+export const BASE_URL = 'www.onepiecening.com/ley'
