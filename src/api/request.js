@@ -1,6 +1,7 @@
 import axios from 'axios'
-const baseURL = 'http://localhost:8090'  // "http://10.54.26.43:8090"
-axios.defaults.baseURL = baseURL
+import { BASE_URL } from './baseUrl'
+// const baseURL = 'http://localhost:8090'  // "http://10.54.26.43:8090"
+axios.defaults.baseURL = BASE_URL
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.timeout = 5000
 // 几种常见的 Content-Type 
