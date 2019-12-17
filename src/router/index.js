@@ -18,17 +18,10 @@ const routes = [
         path: 'index',
         name: 'Home',
         component: () => import('@pages/home/index')
-      }
-    ]
-  },
-  {
-    path: '/article',
-    redirect: '/article/index',
-    component: LayOut,
-    children: [
+      },
       {
-        path: 'index/:id',
-        name: 'Article',
+        path: 'article/:id',
+        name: 'ArticleDetail',
         component: () => import('@pages/article/index')
       }
     ]

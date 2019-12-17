@@ -10,6 +10,7 @@ module.exports = {
       .set('@pages', resolve('src/pages'))
       .set('@components', resolve('src/components'))
       .set('@api', resolve('src/api'))
+      .set('@utils', resolve('src/utils'))
 
     config.module.rule('md')
       .test(/\.md$/)
