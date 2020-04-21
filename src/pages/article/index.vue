@@ -25,8 +25,8 @@ renderer.code = (str, infostring, escaped) => {
   // const codeHtml = hjs.highlight(validLanguage, str).value;
   const codeHtml = hjs.highlightAuto(str).value;
   return `
-    <div>
-      <div class="code-header">
+    <div class="code-main">
+      <div class="code-header ley-flex">
         <div class="item-range"></div>
         <div class="item-range"></div>
         <div class="item-range"></div>
@@ -57,21 +57,21 @@ export default {
           smartLists: true,
           smartypants: false,
           xhtml: false,
-          highlight: (code, language) => {
-            // console.log('code ===>>>', code);
-            console.log('language ===>>', language);
+          // highlight: (code, language) => {
+          //   // console.log('code ===>>>', code);
+          //   console.log('language ===>>', language);
             
-            // console.log('输出DOM：', hjs.highlightAuto(code).value);
-            const validLanguage = hjs.getLanguage(language) ? language : 'plaintext';
-            console.log('validLanguage ===>>>', hjs.highlightAuto(code).value);
-            return hjs.highlightAuto(code).value
-            // return hjs.highlight(validLanguage, code).value;
-            // const codeMain = hjs.highlightAuto(code).value
-            // const htmlStr = `<span><i></i><i></i><i></i></span>
-            //   ${codeMain}
-            // `
-            // return htmlStr
-          },
+          //   // console.log('输出DOM：', hjs.highlightAuto(code).value);
+          //   const validLanguage = hjs.getLanguage(language) ? language : 'plaintext';
+          //   console.log('validLanguage ===>>>', hjs.highlightAuto(code).value);
+          //   return hjs.highlightAuto(code).value
+          //   // return hjs.highlight(validLanguage, code).value;
+          //   // const codeMain = hjs.highlightAuto(code).value
+          //   // const htmlStr = `<span><i></i><i></i><i></i></span>
+          //   //   ${codeMain}
+          //   // `
+          //   // return htmlStr
+          // },
           renderer
         })
       }
@@ -96,12 +96,32 @@ export default {
 
 <style scoped lang="scss">
 .article {
-  /deep/ .code-header {
-    .item-range {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background-color: red;
+  /deep/ .code-main {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    .code-header {
+      padding: 10px 0 0 20px;
+      .item-range {
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: red;
+        &:nth-child(1) {
+          background-color: #ff5f56;
+        }
+        &:nth-child(2) {
+          background-color: #ffbd2e;
+        }
+        &:nth-child(3) {
+          background-color: #27c93f;
+        }
+      }
+    }
+    .code-content {
+      pre {
+        margin-top: 0;
+      }
     }
   }
 }
