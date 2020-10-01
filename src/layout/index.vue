@@ -5,19 +5,21 @@
       <div class="ley-view">
         <router-view></router-view>
       </div>
-      <div class="right-side">
+      <!-- <div class="right-side">
         <p class="wen-title">文章归档</p>
         <div>
           <span>></span>
           <span>2019年六月</span>
         </div>
-      </div>
+      </div> -->
     </div>
+    <Blog-bottom></Blog-bottom>
   </div>
 </template>
 
 <script>
-  import BlogHead from '@components/Head';
+  import BlogHead from './components/BlogHeader';
+  import BlogBottom from './components/BlogBottom'
   export default {
     data() {
       return {
@@ -37,7 +39,8 @@
 
     },
     components: {
-      BlogHead
+      BlogHead,
+      BlogBottom
     },
   }
 </script>
@@ -49,7 +52,7 @@
   padding-top: 50px;
   color: #000;
   .ley-view {
-    width: 70%;
+    width: 100%;
     color: $p-color;
   }
   .right-side {

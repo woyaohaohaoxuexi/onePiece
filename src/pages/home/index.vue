@@ -5,7 +5,9 @@
       :key="item.id"
       class="item-article">
       <h3>
-        <router-link :to="{ name: 'ArticleDetail', params: { id: item.id } }" class="ley-a">
+        <router-link
+          :to="{ name: 'ArticleDetail', params: { id: item.id } }"
+          class="ley-a ley-title">
           {{item.title}}
         </router-link>
       </h3>
@@ -55,7 +57,7 @@ export default {
   .item-article {
     padding-left: 10px;
     padding-bottom: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     border-bottom: 2px solid $color-border;
     .date-content {
       font-size: 12px;
