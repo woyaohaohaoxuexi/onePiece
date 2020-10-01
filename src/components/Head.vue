@@ -21,7 +21,7 @@
 	export default {
 		data() {
 			return {
-				userName: 'LEY`s blog',
+				userName: 'Ley`s blog',
 				menuList: [
 					{
 						name: '前端技术',
