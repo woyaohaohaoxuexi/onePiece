@@ -3,16 +3,16 @@
 		<div class="container ley-flex ley-between ley-align-center">
 			<!--  左边博客主名称  -->
 			<div class="user-name">
-				{{ userName }}
+				<router-link to="/" class="blog-name ley-a">{{ userName }}</router-link>
 			</div>
 			<!--  右边菜单列表  -->
-			<div class="head-menu ley-flex">
+			<!-- <div class="head-menu ley-flex">
 				<div v-for="(item, index) in menuList"
 					class="item-menu"
 					:key="index">
 					<router-link :to="{name: item.routeName}" class="ley-a">{{ item.name }}</router-link>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>
@@ -67,10 +67,14 @@
 	width: 70%;
 	height: 60px;
 	margin: 0 auto;
-	.user-name {
+	.blog-name {
+		font-size: 20px;
 		font-weight: 600;
 		line-height: 60px;
-		color: #000;
+		color: $color-333;
+		&:hover {
+			color: $orange;
+		}
 	}
 	.item-menu {
 		margin: 0 15px;

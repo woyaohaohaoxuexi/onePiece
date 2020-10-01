@@ -18,6 +18,11 @@
   box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.14);
 }
 
+// title 提示
+.ley-title {
+  font-size: 18px;
+}
+
 // a 标签
 .ley-a {
   text-decoration: none;
@@ -28,6 +33,9 @@
 .ley-default-a {
   text-decoration: none;
   color: $color-666;
+}
+
+.ley-a, .ley-default-a {
   &:hover {
     color: $orange;
   }
