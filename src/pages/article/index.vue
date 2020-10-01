@@ -15,7 +15,28 @@ import marked from 'marked'
 // import highlight from 'highlight.js/lib/highlight'
 // 必须使用 require() 的方式
 const hjs = require('highlight.js')
+const renderer = new marked.Renderer()
 
+renderer.code = (str, infostring, escaped) => {
+  console.log('code str ===> ', str);
+  console.log('code infostring ===> ', infostring)
+  console.log('code escaped ===> ', escaped)
+  // const validLanguage = hjs.getLanguage(infostring) ? infostring : 'plaintext';
+  // const codeHtml = hjs.highlight(validLanguage, str).value;
+  const codeHtml = hjs.highlightAuto(str).value;
+  return `
+    <div class="code-main">
+      <div class="code-header ley-flex">
+        <div class="item-range"></div>
+        <div class="item-range"></div>
+        <div class="item-range"></div>
+      </div>
+      <div class="code-content">
+        <pre><code>${codeHtml}</code></pre>
+      </div>
+    </div>
+  `
+}
 export default {
   name: 'Article',
   data() {
@@ -29,16 +50,29 @@ export default {
       let articleDom = ''
       if (article) {
         articleDom = marked(article, {
-          pedantic: false,
-          gfm: true,
+          pedantic: false,  // 如果为true，则尽可能符合原始的markdown.pl。不要修复原始的降价错误或行为。关闭并覆盖gfm。
+          gfm: true, // 使用标准的 GitHub Flavored 语法
           breaks: false,
           sanitize: false,
           smartLists: true,
           smartypants: false,
           xhtml: false,
-          highlight: (code) => {
-            return hjs.highlightAuto(code).value
-          }
+          // highlight: (code, language) => {
+          //   // console.log('code ===>>>', code);
+          //   console.log('language ===>>', language);
+            
+          //   // console.log('输出DOM：', hjs.highlightAuto(code).value);
+          //   const validLanguage = hjs.getLanguage(language) ? language : 'plaintext';
+          //   console.log('validLanguage ===>>>', hjs.highlightAuto(code).value);
+          //   return hjs.highlightAuto(code).value
+          //   // return hjs.highlight(validLanguage, code).value;
+          //   // const codeMain = hjs.highlightAuto(code).value
+          //   // const htmlStr = `<span><i></i><i></i><i></i></span>
+          //   //   ${codeMain}
+          //   // `
+          //   // return htmlStr
+          // },
+          renderer
         })
       }
       return articleDom
@@ -61,5 +95,34 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.article {
+  /deep/ .code-main {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    .code-header {
+      padding: 10px 0 0 20px;
+      .item-range {
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: red;
+        &:nth-child(1) {
+          background-color: #ff5f56;
+        }
+        &:nth-child(2) {
+          background-color: #ffbd2e;
+        }
+        &:nth-child(3) {
+          background-color: #27c93f;
+        }
+      }
+    }
+    .code-content {
+      pre {
+        margin-top: 0;
+      }
+    }
+  }
+}
 </style>

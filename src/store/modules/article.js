@@ -8,6 +8,8 @@ export default {
   mutations: {
     SET_ARTICLE_LIST(state, list) {
       state.articleList = list
+      console.log('设置');
+      
     }
   },
   actions: {

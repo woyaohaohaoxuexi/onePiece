@@ -8,7 +8,7 @@ import 'normalize.css'
 import './assets/styles/base/reset.scss'
 import './assets/styles/base/common.scss'
 import './assets/styles/base/layout.scss'
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/tomorrow.css'
 
 Vue.config.productionTip = false
 

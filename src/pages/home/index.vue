@@ -2,6 +2,7 @@
   <div class='home-page'>
     <div 
       v-for="item in articleList"
+      :key="item.id"
       class="item-article">
       <h3>
         <router-link :to="{ name: 'ArticleDetail', params: { id: item.id } }" class="ley-a">
